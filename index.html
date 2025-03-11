@@ -2,36 +2,38 @@
 <html lang="en">
 <head>
     <title>Rock, Paper, Scissors</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
         <h1>Rock, Paper, Scissors</h1>
     </header>
     <main>
-        <section>
-        <h2>Rules:</h2> 
-        <ol>
-                <li>Click on Rock, Paper, or Scissors</li>
-                <li>The computer wil choose one at random and display the results</li>
-                <li>Click the button to play again</li>
-                <ul>
-                    <li>Rock beats Scissors</li>
-                    <li>Scissors beats Paper</li>
-                    <li>Paper beats Rock</li>
-            </ul>
-        </ol>
+        <section class="in-game">
+            <h2>Rules:</h2> 
+            <ol>
+                    <li>Click on the image OR press the corresponding key: Rock(r), Paper(p), Scissors(s)</li>
+                    <ul>
+                        <li>Rock beats Scissors</li>
+                        <li>Scissors beats Paper</li>
+                        <li>Paper beats Rock</li>
+                    </ul>
+                    <li>The computer wil choose one at random and display the results</li>
+                    <li>Click the button to play again</li>
+            </ol>
         </section>
-        <section>
-            <img src="rock.png" alt="rock"/>
-            <img src="paper.png" alt="paper"/>
-            <img src="scissors.png" alt="scissors"/>
+        <section id="img-container" class="in-game">
+            <img id="rock" src="rock.png" alt="rock"/>
+            <img id="paper" src="paper.png" alt="paper"/>
+            <img id="scissors" src="scissors.png" alt="scissors"/>
         </section>
-        <section>
+        <section class="winner">
             <h2>Results:</h2>
-            <p>User - </p>
-            <p>Computer - </p>
-            <p>Winner - </p>
+            <p></p>
+            <p></p>
+            <p id="win"></p>
             <button>Play Again</button>
         </section>
     </main>
