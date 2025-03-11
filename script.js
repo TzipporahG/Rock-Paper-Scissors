@@ -6,10 +6,23 @@
         const winner = document.querySelector('.winner p:nth-of-type(3)');
         const playAgain = document.querySelector('.winner button');
 
+        const keypressHandler = (event) => {
+            if (event.key === 'r') {
+                rock.click();
+            } else if (event.key === 'p') {
+                paper.click();
+            } else if (event.key === 's') {
+                scissors.click();
+            }
+        };
+
+        document.addEventListener("keypress", keypressHandler);
+
         rock.addEventListener('click', () => {
             document.querySelector('.winner').style.display = 'block';
             document.querySelector('.in-game').style.display = 'none';
             document.querySelector('#img-container').style.display = 'none';
+            document.removeEventListener("keypress", keypressHandler);
             user.textContent = 'User - Rock';
             const computerChoice = Math.floor(Math.random() * 3);
             if (computerChoice === 0) {
@@ -28,6 +41,7 @@
             document.querySelector('.winner').style.display = 'block';
             document.querySelector('.in-game').style.display = 'none';
             document.querySelector('#img-container').style.display = 'none';
+            document.removeEventListener("keypress", keypressHandler);
             user.textContent = 'User - Paper';
             const computerChoice = Math.floor(Math.random() * 3);
             if (computerChoice === 0) {
@@ -46,6 +60,7 @@
             document.querySelector('.winner').style.display = 'block';
             document.querySelector('.in-game').style.display = 'none';
             document.querySelector('#img-container').style.display = 'none';
+            document.removeEventListener("keypress", keypressHandler);
             user.textContent = 'User - Scissors';
             const computerChoice = Math.floor(Math.random() * 3);
             if (computerChoice === 0) {
@@ -58,20 +73,11 @@
                 computer.textContent = 'Computer - Scissors';
                 winner.textContent = 'Winner - Tie';
             }
-        });
-
-       document.addEventListener("keypress", () => {
-            if (event.key === 'r') {
-                rock.click();
-            } else if (event.key === 'p') {
-                paper.click();
-            } else if (event.key === 's') {
-                scissors.click();
-            }
-        }); 
+        })
 
         playAgain.addEventListener('click', () => {
             document.querySelector('.winner').style.display = 'none';
             document.querySelector('.in-game').style.display = 'block';
-            document.querySelector('#img-container').style.display = 'block';
+            document.querySelector('#img-container').style.display = 'flex';
+            document.addEventListener("keypress", keypressHandler);
         });
